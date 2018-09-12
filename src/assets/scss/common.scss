@@ -1,0 +1,277 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; // font-family: 'Helvetica Neue', 'Helvetica', tahoma, 'Hiragino Sans GB', 'PingFang SC', 'STHeitiSC-Light', 'Microsoft YaHei', Arial, sans-serif;
+  min-width: 1200px;
+  overflow: hidden;
+  overflow-x: auto;
+  min-height: 100vh;
+  min-height: calc(100% - #{$header-height});
+  color: $primary-font-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.login {
+    overflow-y: auto;
+  }
+}
+
+.iconfont {
+  color: white;
+}
+
+.color-green {
+  color: $color-green;
+}
+
+.color-red {
+  color: $color-red;
+}
+
+.color-yellow {
+  color: $color-yellow;
+}
+
+.color-orange {
+  color: $color-orange;
+}
+
+.color-blue {
+  color: $color-blue;
+}
+
+.color-gray {
+  color: $color-unimportant;
+}
+
+.center {
+  @include center;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.dn {
+  display: none;
+  pointer-events: none;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.back {
+  position: fixed;
+  right: 50px;
+  top: 100px;
+  z-index: 1000;
+}
+
+.hbyp {
+  position: absolute;
+  transform: translateY(-1000px);
+}
+
+.vh {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.va-m {
+  vertical-align: middle;
+}
+
+.dn-by-h {
+  overflow: hidden;
+  height: 0 !important;
+  padding: 0 !important;
+}
+
+.small,
+small {
+  font-size: 80%;
+  color: $color-unimportant;
+}
+
+em {
+  color: $color-orange;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clfix {
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+.cl-b {
+  clear: both;
+}
+
+.mt70 {
+  margin-top: 70px;
+}
+
+@for $i from 1 through 8 {
+  // 5px 递增
+  .mr#{$i * 5} {
+    margin-right: 5px * $i !important;
+  }
+  .ml#{$i * 5} {
+    margin-left: 5px * $i !important;
+  }
+  .mt#{$i * 5} {
+    margin-top: 5px * $i !important;
+  }
+  .mb#{$i * 5} {
+    margin-bottom: 5px * $i !important;
+  }
+  .m#{$i * 5} {
+    margin: 5px * $i !important;
+  }
+  .mrr#{$i * 5} {
+    margin-right: -5px * $i !important;
+  }
+  .mlr#{$i * 5} {
+    margin-left: -5px * $i !important;
+  }
+  .mtr#{$i * 5} {
+    margin-top: -5px * $i !important;
+  }
+  .mbr#{$i * 5} {
+    margin-bottom: -5px * $i !important;
+  }
+  .mmr#{$i * 5} {
+    margin: -5px * $i !important;
+  } // 3px 递增
+  .mr#{$i * 3} {
+    margin-right: 3px * $i !important;
+  }
+  .ml#{$i * 3} {
+    margin-left: 3px * $i !important;
+  }
+  .mt#{$i * 3} {
+    margin-top: 3px * $i !important;
+  }
+  .mb#{$i * 3} {
+    margin-bottom: 3px * $i !important;
+  }
+  .m#{$i * 3} {
+    margin: 3px * $i !important;
+  }
+  .mrr#{$i * 3} {
+    margin-right: -3px * $i !important;
+  }
+  .mlr#{$i * 3} {
+    margin-left: -3px * $i !important;
+  }
+  .mtr#{$i * 3} {
+    margin-top: -3px * $i !important;
+  }
+  .mbr#{$i * 3} {
+    margin-bottom: -3px * $i !important;
+  }
+  .mmr#{$i * 3} {
+    margin: -3px * $i !important;
+  } // 5px 递增
+  .pr#{$i * 5} {
+    padding-right: 5px * $i !important;
+  }
+  .pl#{$i * 5} {
+    padding-left: 5px * $i !important;
+  }
+  .pt#{$i * 5} {
+    padding-top: 5px * $i !important;
+  }
+  .pb#{$i * 5} {
+    padding-bottom: 5px * $i !important;
+  }
+  .p#{$i * 5} {
+    padding: 5px * $i !important;
+  } // 3px 递增
+  .pr#{$i * 3} {
+    padding-right: 3px * $i !important;
+  }
+  .pl#{$i * 3} {
+    padding-left: 3px * $i !important;
+  }
+  .pt#{$i * 3} {
+    padding-top: 3px * $i !important;
+  }
+  .pb#{$i * 3} {
+    padding-bottom: 3px * $i !important;
+  }
+  .p#{$i * 3} {
+    padding: 3px * $i !important;
+  }
+  .lh0_8_#{$i} {
+    line-height: 0.8em * $i !important;
+  }
+  .lh0_6_#{$i} {
+    line-height: 0.6em * $i !important;
+  }
+  .ft#{$i * 5} {
+    font-size: 5px * $i !important;
+  }
+  .ft#{$i * 6} {
+    font-size: 6px * $i !important;
+  }
+  .ft#{$i * 7} {
+    font-size: 7px * $i !important;
+  }
+  .wh#{$i * 5} {
+    width: 5px * $i;
+  }
+}
+
+@each $pos in left,
+right,
+center {
+  .text-#{$pos} {
+    text-align: #{$pos};
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ov-h {
+  overflow: hidden;
+}
+
+.ov-a {
+  overflow: auto;
+}
+
+.blank:after {
+  content: '空';
+  color: transparent;
+  opacity: 0;
+}
+
+.bd-l {
+  border-left: 1px solid $border-color;
+}
+
+.bd-t {
+  border-top: 1px solid $border-color;
+}
+
+.bd-r {
+  border-right: 1px solid $border-color;
+}
+
+.bd-b {
+  border-bottom: 1px solid $border-color;
+}

@@ -1,0 +1,220 @@
+// ----- 颜色 -----
+$primary-font-color: white;
+$minor-font-color: #bababa;
+$primary-color: #0076ff;
+$primary-bg-color: #3b3939;
+$sub-nav-color: #06a0f8;
+$border-color: black;
+$header-color: #f3f6f8;
+$color-green: #356604;
+$color-red: #6f0909;
+$color-orange: #ebab61;
+$color-blue: #0076ff;
+$color-light-blue: #20a0ff;
+$color-unimportant: #929aa3;
+$color-yellow: #f7ba2a;
+
+// 菜单栏颜色
+$menu-bgactive-color: #4a90e2; //主菜单激活背景颜色
+$sub-bg-color: white; // 次级菜单背景颜色
+$sub-liactive-color: #ededed; //次级标签激活的颜色
+$sub-border-color: #4a90e2; //次菜单border
+$sub-font-color: black; //次菜单字体颜色
+$sub-fontactive-color: #4a90e2; //此标签字体激活颜色
+
+// table颜色
+$table-bg-color: #1f1f1f; //主背景色（.tableShow）
+$table-font-color: white; //主字体 （.el-table）
+$th-font-color: white; //表头字体颜色（.el-table thead）
+$th-bg-color: #333233; //表头背景颜色
+$th-border-color: #333233; //表头border颜色
+$th-shadow-color: #4f4f4f; //表头阴影
+$td-border-color: black; //.el-table td, .el-table th.is-leaf
+$tr-evenbg-color: #070707; //偶数行背景颜色
+$tr-oddbg-color: #2b2b2b; //基数行背景颜色
+$tr-active-color: rgba(5, 117, 255, 0.5); //每一列激活的背景颜色.current-row
+
+/*form表单配置开始*/
+$label-bg-color: #2f2f2f; //表单标签背景色
+$label-border-color: black; //表单标签边框颜色
+$label-boxshadow-color: #b1b1b1; //表单标签阴影颜色
+$label-font-color: white; //表单标签字体颜色
+$label-sub-font-color: #c2c2c2; //副标题文字
+$label-width: 70px; //表单标签宽度
+$label-height: 34px; //表单输入项高度
+
+$input-bg-color: #f4f4f4; //表单输入项背景色
+$input-border-color: black; //表单输入项边框颜色
+$input-sub-border-color: #979797; //表单输入项边框颜色
+$input-boxshadow-color: transparent; //表单输入项阴影颜色
+$input-font-color: black; //表单输入项字体颜色
+$input-line-height: 34px; //表单输入项行高
+$input-height: 34px; //表单输入项高度
+
+$button-default-bg-color: #356604; //表单默认按钮背景色
+$button-default-border-color: black; //表单默认按钮边框颜色
+$button-default-boxshadow-color: #7e7e7e; //表单默认按钮阴影颜色
+$button-default-color: white; //表单默认按钮字体颜色
+
+$button-primary-bg-color: #0076ff; //表单主要按钮背景色
+$button-primary-border-color: black; //表单主要按钮边框颜色
+$button-primary-boxshadow-color: #97c7ff; //表单主要按钮阴影颜色
+$button-primary-color: white; //表单主要按钮字体颜色
+$button-primary-hover-bg-color: #429aff;
+$button-primary-active-boxshadow-color: #0052b1;
+
+$button-success-bg-color: $color-green; //表单成功按钮背景色
+$button-success-border-color: black; //表单成功按钮边框颜色
+$button-success-boxshadow-color: #7e7e7e; //表单成功按钮阴影颜色
+$button-success-color: white; //表单成功按钮字体颜色
+$button-success-hover-bg-color: #548c1b;
+$button-success-hover-boxshadow-color: #86d339;
+$button-success-active-bg-color: #356604;
+$button-success-active-boxshadow-color: #264600;
+
+$button-warning-bg-color: #ebab61; //表单警告按钮背景色
+$button-warning-border-color: black; //表单警告按钮边框颜色
+$button-warning-boxshadow-color: #97c7ff; //表单警告按钮阴影颜色
+$button-warning-color: white; //表单警告按钮字体颜色
+
+$button-danger-bg-color: #6f0909; //表单错误按钮背景色
+$button-danger-border-color: black; //表单错误按钮边框颜色
+$button-danger-boxshadow-color: #7e7e7e; //表单错误按钮阴影颜色
+$button-danger-color: white; //表单错误按钮字体颜色
+$button-danger-hover-bg-color: #b02f2f;
+$button-danger-hover-boxshadow-color: #d95656;
+$button-danger-active-bg-color: #6f0909;
+$button-danger-active-boxshadow-color: #5a0303;
+
+$radio-checked-color: #4a90e2; //单选按钮选中时颜色
+$radio-bg-color: white; //单选按钮背景色
+$radio-border-color: #1e1d1d; //单选按钮边框颜色
+$radio-color: #c2c2c2; //单选按钮字体颜色
+
+$checkbox-checked-bg-color: #f4f4f4;
+$checkbox-checked-border-color: #979797;
+$checkbox-before-bg-color: #0076ff;
+$checkbox-after-border-color: #0076ff;
+
+$error-border-color: #ff4949; //错误信息边框颜色
+
+$datepicker-border-color: white; //日期选择器边框颜色
+
+$cascader-bg-color: white; //背景色
+$cascader-border-color: white; //边框颜色
+
+$select-input-color: #01a6ff;
+
+$dropdown-color: #ffffff; // 下拉列表的字体颜色
+$dropdown-hover-bg-color: #ededed; // 下拉列表选中或hover时背景色
+$dropdown-item-height: 32px; //下拉项的高度
+$dropdown-item-lineheight: 32px; //下拉项的行高
+
+$popover-bg-color: #2f2f2f;
+$popover-border-color: black;
+$popover-boxshadow-color: #545454;
+$popover-arrow-border-color: #070707;
+$popover-arrow-after-border-color: #2f2f2f;
+
+$tooltip-border-color: white;
+
+$loading-mask-bg-color: rgba(255, 255, 255, 0.2);
+/*form表单配置结束*/
+
+
+//模态弹框  dialog，messageBox
+$model-bg-color: #2f2f2f;
+$model-header-color: #191919;
+$model-border-color: black;
+$model-closeshadow-color: rgba(0, 0, 0, 0.5);
+$model-closebg-color: #4a4a4a;
+$model-closeicon-color: white;
+$model-shadow-color: #545454;
+
+// page分页
+$page-bg-color: #222325; //分页中外面最大的容器背景颜色
+$btn-prev-color: #4a4a4a; //每一个页签按钮的颜色
+$btn-shadow-color: #7e7e7e; //页签按钮阴影颜色
+$btn-active-color: #313131; // 页签激活时的颜色
+$input-bg-color: #f4f4f4; //页签输入的框的背景颜色
+$input-font-color: black; //页签输入框内的背景颜色
+
+// ----- 文字尺寸 -----
+$font-size-xxxl: 25px;
+$font-size-xxl: 20px;
+$font-size-xl: 17px;
+$font-size-l: 16px;
+$font-size-m: 15px;
+$font-size-s: 14px;
+$font-size-xs: 13px;
+$font-size-xxs: 12px;
+@mixin font-size-xxxs {
+  font-size: $font-size-xxs;
+  transform: scale(0.9167);
+}
+
+@mixin font-size-xxxxs {
+  font-size: $font-size-xxs;
+  transform: scale(0.8333);
+}
+
+@mixin flex($xAlign: center, $yAlign: center) {
+  display: flex;
+  justify-content: $xAlign;
+  align-items: $yAlign;
+}
+
+@mixin ell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin clfix {
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+@mixin center {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+%red-repeat-bg {
+  background: repeating-linear-gradient(
+    110deg,
+    #981206,
+    #981206 20px,
+    #7d0d05 20px,
+    #7d0d05 80px,
+    #981206 80px,
+    #981206 120px
+  );
+}
+
+// ----- 尺寸 -----
+$header-height: 68px; // 头部高度
+$border-radius: 100px;
+$menu-width: 220px;
+$right-side-width: 250px;
+$menu-height: 50px;
+$container-padding: 12px;
+//行内表单域
+$form-input-width: 194px;
+$form-input-height: 34px;
+$form-input-bg-color: #2f437b;
+$el-button-width: 70px;
+$form-label-color: #f4f5f6;
+$warning-bg-color: #eea964;
+$info-color: #2f437b;
+$info-font-size: #91afdb;
