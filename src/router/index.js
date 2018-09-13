@@ -6,7 +6,7 @@ import App from '@/App.vue'
 import i18n from '@/i18n'
 import { find, intersection, flattenDeep } from 'lodash'
 import { MessageBox } from 'element-ui'
-const nprogress = require('@/vendor/nprogress').NProgress
+const nprogress = require('@/vendor/nprogress')
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -32,9 +32,6 @@ router.beforeEach((to, from, next) => {
   const token = store.state.token
   const authorities = user.authorities
   console.log(user, token, authorities)
-  if (process.env.VUE_APP_CUSTOM_API_URL === 'true' && to.query.customBaseURL) {
-    store.commit('updateCustomBaseURL', to.query.customBaseURL)
-  }
 
   if (process.env.VUE_APP_STOP_PERMIT === 'true' || to.meta.skipAuth) {
     next()

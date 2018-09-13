@@ -55,12 +55,6 @@ function diposeInvalidGrant(error = '') {
 http.defaults.headers['Access-Control-Allow-Origin'] = '*'
 http.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 http.interceptors.request.use(config => {
-  if (
-    process.env.VUE_APP_CUSTOM_API_URL === 'true' &&
-    store.state.customBaseURL
-  ) {
-    config.baseURL = store.state.customBaseURL
-  }
   if (store.state.token && !config.headers.common['Authorization']) {
     config.headers.common['Authorization'] = 'Bearer ' + store.state.token
   }

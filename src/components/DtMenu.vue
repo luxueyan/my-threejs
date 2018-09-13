@@ -155,12 +155,6 @@ export default {
     // }
   },
 
-  // watch: {
-  //   $route() {
-  //     if (process.env.VUE_APP_DEMO !== 'true') this._checkUntreatAlarms()
-  //   }
-  // },
-
   computed: {
     ...mapState(['tokenTime', 'tokenExpiresIn'])
   },
@@ -170,7 +164,6 @@ export default {
   data() {
     return {
       preRoute: null,
-      isDemo: process.env.VUE_APP_DEMO === 'true',
       alarmTips: false,
       user: this.$store.state.user,
       systemType: this.$store.state.systemType,

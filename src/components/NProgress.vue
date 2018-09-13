@@ -1,6 +1,10 @@
+<template>
+  <div></div>
+</template>
+
 <script>
 import '@/vendor/nprogress.css'
-const nprogress = require('@/vendor/nprogress.js').NProgress
+const nprogress = require('@/vendor/nprogress.js')
 
 export default {
   name: 'NProgress',

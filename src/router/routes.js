@@ -6,7 +6,7 @@ routeArr = [
   {
     path: '/',
     name: 'root',
-    redirect: { name: 'index' },
+    redirect: { name: 'login' },
     props: {
       menus: [
         {

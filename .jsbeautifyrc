@@ -119,7 +119,7 @@
     "space_after_anon_function": false,
 
     // Should the space before conditional statement be added, "if(true)" vs "if (true)"
-    "space_before_conditional": false,
+    "space_before_conditional": true,
 
     // Add padding spaces within empty paren, "f()" vs "f( )"
     "space_in_empty_paren": false,

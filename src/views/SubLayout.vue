@@ -26,8 +26,6 @@ export default {
   },
 
   mounted() {
-    if (!this.isDemo) this.$store.dispatch('getDictList')
-
     globalBus.$on('window-resize', e => {
       const childView = this.$refs.routerView || {}
       childView._initViewSize && childView._initViewSize()
@@ -67,7 +65,6 @@ export default {
 
   data() {
     return {
-      isDemo: process.env.VUE_APP_DEMO === 'true',
       crumbsVisible: true,
       crumbs: [],
       currentMenus: this.menus
