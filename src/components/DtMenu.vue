@@ -22,7 +22,7 @@
             </el-col>
           </el-row>
         </li>
-        <!-- <li v-show="$_bd_permit('alarm') && !isDemo">
+        <!-- <li v-show="$_dt_permit('alarm') && !isDemo">
           <a v-ripple-btn="'a'" @click="showUntreatedAlarms">
             <i class="iconfont icon-gaojing"></i>
             <p>告警</p>
@@ -122,7 +122,7 @@ export default {
         return {
           visible:
             !secondChildren ||
-            (this.$_bd_permit(secondChildren.meta.authorities) &&
+            (this.$_dt_permit(secondChildren.meta.authorities) &&
               secondChildren.meta.type === this.$store.state.systemType),
           ...v,
           activeIncludes:

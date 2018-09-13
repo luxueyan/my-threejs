@@ -3,12 +3,12 @@ export default {
     const strategies = Vue.config.optionMergeStrategies
 
     /**
-     * [_bd_hooks _bd_watches custom merge strategy]
+     * [_dt_hooks _dt_watches custom merge strategy]
      * @param  {?Object} parentVal}
      * @param  {?Object} childVal }
-     * @return {?Object}       [_bd_hooks _bd_watches Object]
+     * @return {?Object}       [_dt_hooks _dt_watches Object]
      */
-    strategies._bd_hooks = strategies._bd_watches = function(
+    strategies._dt_hooks = strategies._dt_watches = function(
       parentVal = {},
       childVal = {}
     ) {
