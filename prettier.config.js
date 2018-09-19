@@ -1,5 +1,5 @@
 module.exports = {
-  printWidth: 80, //一行的字符数，如果超过会进行换行，默认为80
+  printWidth: 120, //一行的字符数，如果超过会进行换行，默认为80
   // tab缩进大小,默认为2
   tabWidth: 2,
   // 使用tab缩进，默认false

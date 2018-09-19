@@ -8,9 +8,11 @@ import router from '@/router/index.js'
 import ElementUI from 'element-ui'
 import DtFilter from '@/common/filter.js'
 import DtDirective from '@/common/directive.js'
-import DtGlobalMixin from '@/common/global-mixin.js'
+import DtGlobalMixin from '@/common/globalMixin.js'
 import BaseComponents from '@/components/index.js'
 import '@/common/global.js' // 一些全局事件方法
+import Socket from '@/common/SocketClass.js'
+console.log(Socket)
 
 Vue.use(ElementUI, {
   i18n: (key, value) => i18n.t(key, value)

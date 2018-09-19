@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Loading } from 'element-ui'
-import msgBoxErr from '@/common/msgbox-err.js'
+import msgBoxErr from '@/common/msgBoxErr.js'
 import store from '@/vuex/store.js'
 import { urlMatcher } from '@/common/util.js'
 import qs from 'qs'

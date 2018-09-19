@@ -85,7 +85,7 @@ module.exports = {
     sourceMap: true,
     loaderOptions: {
       sass: {
-        data: `@import "@/assets/scss/_vars.scss";`
+        // data: `@import "@/assets/scss/_vars.scss";`
         // data: fs.readFileSync('src/assets/scss/_vars.scss', 'utf-8')
       }
     },
@@ -99,10 +99,6 @@ module.exports = {
   // use thread-loader for babel & TS in production build
   // enabled by default if the machine has more than 1 cores
   parallel: require('os').cpus().length > 1,
-
-  // split vendors using autoDLLPlugin?
-  // can also be an explicit Array of dependencies to include in the DLL chunk.
-  // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode
 
   // options for the PWA plugin.
   // see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
@@ -148,5 +144,12 @@ module.exports = {
     }, // string | Object
     before: app => {}
   },
-  pluginOptions: {}
+  pluginOptions: {
+    'style-resources-loader': {
+      patterns: [
+        '/Users/luxueyan/bitmain/data-tag-frontend/src/assets/scss/_vars.scss'
+      ],
+      preProcessor: 'scss'
+    }
+  }
 }
