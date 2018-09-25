@@ -32,19 +32,7 @@ module.exports = {
 
     config.module
       .rule('js')
-      .include.add(resolve('./node_modules/element-ui/src'))
-      .add(resolve('./node_modules/element-ui/packages'))
-
-    config.module
-      .rule('js')
-      .exclude.add(resolve('./src/vendor/bitmain.min.js'))
-      .add(resolve('./src/vendor/flv.min.js'))
-      .add(resolve('./src/components/bdVideo/vendor'))
-
-    // config.module
-    //   .rule('eslint')
-    //   .use('eslint-loader')
-    //   .tap(options => merge(options, { quiet: true, emitWarning: false }))
+      .exclude.add(resolve('./src/vendor'))
 
     config.module.rule('eslint').exclude.add(resolve('./src/vendor'))
 
@@ -53,28 +41,18 @@ module.exports = {
       // config.plugin('bundleAnalyze').use(BundleAnalyzerPlugin)
       config.plugin('gzip').use(CompressionPlugin, [
         {
-          asset: '[path].gz[query]',
+          filename: '[path].gz[query]',
           algorithm: 'gzip',
           test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$'),
-          threshold: 10240,
+          threshold: 8192,
           minRatio: 0.8
         }
       ])
     }
-
-    // if (process.env.TARGET === 'DEV') {
-    //   config.output.path(resolve('dist'))
-    // }
-
-    // config.plugin('define')
-    //   .tap(args => [{
-    //     'process.env': {
-    //       ...args[0]['process.env'],
-    //       API_HOST: '""',
-    //       STOP_PERMIT: 'true'
-    //     }
-    //   }])
   },
+
+  transpileDependencies: [resolve('./node_modules/element-ui/src'), resolve('./node_modules/element-ui/packages')],
+
   lintOnSave: 'error',
   // compiler: true,
   css: {
@@ -120,7 +98,6 @@ module.exports = {
       '/api': {
         target: 'http://192.168.193.41:8989',
         changeOrigin: true,
-        // onProxyRes: function(proxyRes, req, res) {},
         pathRewrite: function(path) {
           return path.replace('/api/', '/')
         }
@@ -128,7 +105,6 @@ module.exports = {
       '/socket': {
         target: 'http://192.168.193.41:9015',
         changeOrigin: true,
-        // onProxyRes: function(proxyRes, req, res) {},
         pathRewrite: function(path) {
           return path.replace('/socket/', '/')
         }
@@ -136,7 +112,6 @@ module.exports = {
       '/map_api': {
         target: 'http://192.168.193.41:8666',
         changeOrigin: true,
-        // onProxyRes: function(proxyRes, req, res) {},
         pathRewrite: function(path) {
           return path.replace('/map_api/', '/')
         }
@@ -146,9 +121,7 @@ module.exports = {
   },
   pluginOptions: {
     'style-resources-loader': {
-      patterns: [
-        '/Users/luxueyan/bitmain/data-tag-frontend/src/assets/scss/_vars.scss'
-      ],
+      patterns: [resolve('./src/assets/scss/_vars.scss')],
       preProcessor: 'scss'
     }
   }

@@ -1,3 +1,4 @@
 # .eslintrc.js
 dist/*.js
 public/*.js
+webpack.output.js

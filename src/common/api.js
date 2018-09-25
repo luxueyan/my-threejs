@@ -5,6 +5,7 @@ import store from '@/vuex/store.js'
 import { urlMatcher } from '@/common/util.js'
 import qs from 'qs'
 import i18n from '@/i18n'
+import logger from 'loglevel'
 
 const loadingInstances = {}
 
@@ -16,17 +17,9 @@ export const http = axios.create({
   },
   transformRequest: [
     (data, headers) => {
-      if (
-        data &&
-        headers['Content-Type'] &&
-        ~headers['Content-Type'].indexOf('x-www-form-urlencoded')
-      ) {
+      if (data && headers['Content-Type'] && ~headers['Content-Type'].indexOf('x-www-form-urlencoded')) {
         return qs.stringify(data)
-      } else if (
-        data &&
-        headers['Content-Type'] &&
-        ~headers['Content-Type'].indexOf('application/json')
-      ) {
+      } else if (data && headers['Content-Type'] && ~headers['Content-Type'].indexOf('application/json')) {
         return JSON.stringify(data)
       }
       return data
@@ -44,11 +37,7 @@ function closeLoading(url) {
 
 // 后端处理不了登录时候密码错误的提示英文信息
 function diposeInvalidGrant(error = '') {
-  return ~error.indexOf('invalid_grant')
-    ? '用户名或密码错误'
-    : ~error.indexOf('invalid_token')
-      ? '权限验证失败'
-      : error
+  return ~error.indexOf('invalid_grant') ? '用户名或密码错误' : ~error.indexOf('invalid_token') ? '权限验证失败' : error
 }
 
 // http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -87,7 +76,7 @@ http.interceptors.response.use(
     return Promise.reject(res)
   },
   err => {
-    console.log(err, JSON.parse(JSON.stringify(err)))
+    logger.error(err, JSON.parse(JSON.stringify(err)))
 
     err.config && closeLoading(err.config.url)
     if (err.response) {
@@ -99,36 +88,21 @@ http.interceptors.response.use(
           return Promise.reject(err)
         } else {
           store.dispatch('logout')
-          msgBoxErr(
-            diposeInvalidGrant(err.response.data.error) || i18n.t('global.400'),
-            400
-          )
+          msgBoxErr(diposeInvalidGrant(err.response.data.error) || i18n.t('global.400'), 400)
           return Promise.reject(err)
         }
       } else if (status === 400) {
-        msgBoxErr(
-          diposeInvalidGrant(err.response.data.error) || i18n.t('global.400'),
-          400
-        )
+        msgBoxErr(diposeInvalidGrant(err.response.data.error) || i18n.t('global.400'), 400)
         return Promise.reject(err)
       } else if (status === 478) {
-        msgBoxErr(
-          diposeInvalidGrant(err.response.data.descript) ||
-            i18n.t('global.400'),
-          400
-        )
+        msgBoxErr(diposeInvalidGrant(err.response.data.descript) || i18n.t('global.400'), 400)
         return Promise.reject(err)
       }
       msgBoxErr(i18n.t('global.500'), status)
       return Promise.reject(err)
     }
 
-    msgBoxErr(
-      err.message.indexOf('timeout') > -1
-        ? i18n.t('global.timeout')
-        : i18n.t('global.500'),
-      'SERVER'
-    )
+    msgBoxErr(err.message.indexOf('timeout') > -1 ? i18n.t('global.timeout') : i18n.t('global.500'), 'SERVER')
     return Promise.reject(err)
   }
 )
@@ -149,9 +123,7 @@ apis.keys().forEach(api => {
     }
     v.methods.forEach(m => {
       apiMap[v.name][m] = (data, config) =>
-        m === 'get' || m === 'delete'
-          ? http[m](v.url, { params: data, ...config })
-          : http[m](v.url, data, config)
+        m === 'get' || m === 'delete' ? http[m](v.url, { params: data, ...config }) : http[m](v.url, data, config)
     })
   })
 })

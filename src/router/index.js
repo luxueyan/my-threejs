@@ -6,6 +6,7 @@ import App from '@/App.vue'
 import i18n from '@/i18n'
 import { find, intersection, flattenDeep } from 'lodash'
 import { MessageBox } from 'element-ui'
+
 const nprogress = require('@/vendor/nprogress')
 Vue.use(VueRouter)
 
@@ -31,7 +32,7 @@ router.beforeEach((to, from, next) => {
   const user = store.state.user
   const token = store.state.token
   const authorities = user.authorities
-  console.log(user, token, authorities)
+  Logger.info(user, token, authorities)
 
   if (process.env.VUE_APP_STOP_PERMIT === 'true' || to.meta.skipAuth) {
     next()
@@ -84,19 +85,14 @@ function getPermitRoute(to) {
     // const permitApis = map(filter(permissions, pp => pp.check && pp.apiName), p => p.apiName)
     if (to.name === 'login') resolve(null)
 
-    const menuAuthorities = flattenDeep(
-      to.matched.map(v => v.meta.authorities || [])
-    )
+    const menuAuthorities = flattenDeep(to.matched.map(v => v.meta.authorities || []))
     if (intersection(menuAuthorities, authorities).length) {
       resolve(null)
     } else {
       const mainRoutesParent = find(routes, r => r.name === 'root')
       const mainRoutes = mainRoutesParent.children
       // const flattenRoutes = flattenDeep(map(mainRoutes.children, child => child.children || child))
-      const firstRoute = find(
-        mainRoutes,
-        r => intersection(r.meta.authorities, authorities).length
-      )
+      const firstRoute = find(mainRoutes, r => intersection(r.meta.authorities, authorities).length)
 
       if (firstRoute) {
         resolve({

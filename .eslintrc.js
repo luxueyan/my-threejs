@@ -11,6 +11,7 @@ module.exports = {
     // '@vue/prettier'
     '@vue/standard'
   ],
+  globals: { Logger: true },
   plugins: ['vue', 'prettier'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

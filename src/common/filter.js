@@ -28,7 +28,6 @@ export default {
     Vue.filter('parseInt', parseInt)
 
     Vue.filter('dtJoin', (value, keyBy) => {
-      console.log(value)
       if (isArray(value)) {
         value.map(v => v[keyBy]).join(',')
       }
@@ -119,14 +118,7 @@ export default {
           const hour = Math.floor(minute / 60)
           if (hour > 24) {
             const day = Math.floor(hour / 24)
-            return (
-              day +
-              '天' +
-              (hour - day * 24) +
-              '小时' +
-              (minute - hour * 60) +
-              '分钟'
-            )
+            return day + '天' + (hour - day * 24) + '小时' + (minute - hour * 60) + '分钟'
           }
           return hour + '小时' + (minute - hour * 60) + '分钟'
         }

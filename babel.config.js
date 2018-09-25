@@ -1,4 +1,4 @@
 module.exports = {
-  presets: ['@vue/app'],
-  plugins: ['lodash', '@babel/plugin-syntax-class-properties', '@babel/plugin-transform-class']
+  presets: [['@vue/app', { loose: true }]],
+  plugins: ['lodash']
 }
