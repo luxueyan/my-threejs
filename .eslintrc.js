@@ -14,6 +14,7 @@ module.exports = {
   globals: { Logger: true },
   plugins: ['vue', 'prettier'],
   rules: {
+    // 'no-console': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // allow paren-less arrow functions

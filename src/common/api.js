@@ -5,7 +5,6 @@ import store from '@/vuex/store.js'
 import { urlMatcher } from '@/common/util.js'
 import qs from 'qs'
 import i18n from '@/i18n'
-import logger from 'loglevel'
 
 const loadingInstances = {}
 
@@ -76,7 +75,7 @@ http.interceptors.response.use(
     return Promise.reject(res)
   },
   err => {
-    logger.error(err, JSON.parse(JSON.stringify(err)))
+    Logger.error(err, JSON.parse(JSON.stringify(err)))
 
     err.config && closeLoading(err.config.url)
     if (err.response) {

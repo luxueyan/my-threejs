@@ -113,7 +113,7 @@ export default {
     _genMenus() {
       this.currentMenus = []
       const rootRoute = routes.find(v => v.name === 'root')
-      console.log(rootRoute)
+      // console.log(rootRoute)
 
       return this.menus.map(v => {
         const secondChildren = rootRoute.children.find(
@@ -158,9 +158,7 @@ export default {
   computed: {
     ...mapState(['tokenTime', 'tokenExpiresIn'])
   },
-  mounted() {
-    console.log(this.currentMenus)
-  },
+
   data() {
     return {
       preRoute: null,

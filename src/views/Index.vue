@@ -19,8 +19,6 @@ export default class Index extends Vue {
   }
 
   mounted() {
-    console.log(this)
-    console.log(this)
     Logger.info(this.text, '首页成功加载')
   }
 }
