@@ -31,6 +31,15 @@ module.exports = {
       .loader('vue-svg-loader')
 
     config.module
+      .rule('gltf')
+      .test(/\.gltf$/)
+      .use('file-loader')
+      .loader('file-loader')
+      .options({
+        name: 'imgs/[name].[hash:8].[ext]'
+      })
+
+    config.module
       .rule('js')
       .exclude.add(resolve('./src/vendor'))
 

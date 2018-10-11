@@ -11,7 +11,7 @@ module.exports = {
     // '@vue/prettier'
     '@vue/standard'
   ],
-  globals: { Logger: true },
+  globals: { Logger: true, THREE: true },
   plugins: ['vue', 'prettier'],
   rules: {
     // 'no-console': 'error',
