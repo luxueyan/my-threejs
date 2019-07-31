@@ -36,7 +36,7 @@ export default class Index extends Vue {
       //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
     }
     function initLight() {
-      ambientLight = new THREE.AmbientLight('#111111')
+      ambientLight = new THREE.AmbientLight('#fff')
       scene.add(ambientLight)
       directionalLight = new THREE.DirectionalLight('#ffffff')
       directionalLight.position.set(40, 60, 10)

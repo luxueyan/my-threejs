@@ -1,5 +1,9 @@
 module.exports = {
   plugins: {
-    autoprefixer: {}
+    autoprefixer: {},
+    'postcss-short': {
+      // prefix: 's',
+      skip: '|'
+    }
   }
 }
