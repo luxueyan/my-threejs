@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-decorators": "^0.20.0",
     "element-ui": "^2.4.6",
     "loglevel": "^1.6.1",
