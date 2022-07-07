@@ -16,7 +16,7 @@
     "core-decorators": "^0.20.0",
     "element-ui": "^2.4.6",
     "loglevel": "^1.6.1",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "numeral": "^2.0.6",
     "three": "^0.97.0",
     "vue": "^2.5.17",
